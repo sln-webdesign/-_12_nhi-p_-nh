@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>404 Page — Tessa Morgan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Reset & General Rules */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            background-color: #ffffff;
+            color: #2b2724;
+            -webkit-font-smoothing: antialiased;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            background-color: #ffffff;
+            padding: 24px 0;
+        }
+
+        .nav-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555555;
+            font-weight: 500;
+        }
+
+        .brand-logo {
+            margin: 0 16px;
+            text-align: center;
+        }
+
+        .brand-logo .name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1;
+            color: #222222;
+        }
+
+        .brand-logo .sub {
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #888888;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Banner Image */
+        .hero-banner {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        /* Main 404 Section */
+        .error-content {
+            padding: 80px 20px 100px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .error-eyebrow {
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #c4a482;
+            margin-bottom: 24px;
+        }
+
+        .error-title {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.4;
+            color: #333333;
+            margin-bottom: 40px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #666666;
+            background-color: #ebe5df;
+            padding: 14px 42px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background-color: #222222;
+            color: #ffffff;
+            opacity: 1;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #f8f8f8;
+            padding: 60px 20px 40px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .footer-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 36px;
+        }
+
+        .footer-logo {
+            margin: 0 16px;
+        }
+
+        .footer-logo .name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1;
+            color: #222222;
+        }
+
+        .footer-logo .sub {
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #888888;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .footer-description {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.05rem;
+            color: #777777;
+            max-width: 500px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #c4a482;
+            color: #ffffff;
+            font-size: 0.8rem;
+        }
+
+        .copyright {
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: #aaaaaa;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .nav-wrap, .footer-nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .brand-logo, .footer-logo {
+                order: -1;
+                margin-bottom: 12px;
+            }
+            .hero-banner {
+                height: 240px;
+            }
+            .error-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav-wrap">
+                <a href="../index.html" class="nav-link">HOME</a>
+                <a href="about.html" class="nav-link">ABOUT</a>
+                <a href="services.html" class="nav-link">SERVICES</a>
+                
+                <a href="../index.html" class="brand-logo">
+                    <span class="name">Tessa Morgan</span>
+                    <span class="sub">PHOTOGRAPHY</span>
+                </a>
+                
+                <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Image -->
+    <div class="hero-banner">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80" alt="Couple Header">
+    </div>
+
+    <!-- Main Content -->
+    <main class="error-content">
+        <p class="error-eyebrow">ERROR</p>
+        <h1 class="error-title">SORRY, THE PAGE YOU ARE LOOKING<br>FOR DOESN'T EXIST.</h1>
+        <a href="../index.html" class="btn-home">Home</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="../index.html" class="nav-link">HOME</a>
+                <a href="about.html" class="nav-link">ABOUT</a>
+                <a href="services.html" class="nav-link">SERVICES</a>
+                
+                <div class="footer-logo">
+                    <span class="name">Tessa Morgan</span>
+                    <span class="sub">PHOTOGRAPHY</span>
+                </div>
+                
+                <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </nav>
+
+            <p class="footer-description">
+                Lorem ipsum dolor sit amet consectetur. Morbi volut tempus posuere viverra massa fames sed. Dignissim urisus et ac egestas dignissim.
+            </p>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Twitter">t</a>
+                <a href="#" aria-label="YouTube">y</a>
+                <a href="#" aria-label="Instagram">i</a>
+            </div>
+
+            <p class="copyright">Copyright 2024 All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

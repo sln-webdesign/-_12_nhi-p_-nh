@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi tiết album và câu chuyện tình yêu xúc động qua lăng kính nhiếp ảnh cưới Tessa Morgan.">
+    <title>Chi Tiết Album — Tessa Morgan | Wedding Photographer</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2748%27 fill=%27%232f2a26%27/%3E%3Ctext x=%2750%27 y=%2768%27 font-size=%2752%27 text-anchor=%27middle%27 fill=%27%23c9a26b%27 font-family=%27Georgia,serif%27%3ETM%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+    <!-- ===== Header & Điều hướng chính ===== -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="../index.html">
+                <span class="brand-name">Tessa Morgan</span>
+                <span class="brand-tagline">WEDDING PHOTOGRAPHER</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" aria-label="Điều hướng chính">
+                <a href="../index.html">Trang Chủ</a>
+                <a href="portfolio.html">Bộ Sưu Tập</a>
+                <a href="services.html">Dịch Vụ &amp; Bảng Giá</a>
+                <a href="about.html">Giới Thiệu</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section">
+            <div class="container">
+                <!-- Tiêu đề album + nút tác vụ tương tác -->
+                <div class="album-head reveal is-visible">
+                    <div>
+                        <p class="eyebrow" id="album-category">Đang tải danh mục…</p>
+                        <h1 id="album-title">Đang tải câu chuyện…</h1>
+                        <p id="album-meta" class="form-note" style="color: var(--gold-dark); font-weight: 500; margin-top: 4px;">&nbsp;</p>
+                    </div>
+                    <div class="album-actions">
+                        <button type="button" class="btn btn-primary" id="slideshow-open">▶ Trình Chiếu Toàn Màn Hình</button>
+                        <button type="button" class="btn btn-outline" id="copy-link">⧉ Sao Chép Liên Kết</button>
+                    </div>
+                </div>
+
+                <!-- Khối tự sự cảm xúc dài 180–250 từ (Narrative Storytelling) -->
+                <div id="album-story-container"></div>
+
+                <!-- Lưới ảnh nghệ thuật (Masonry Grid) — click mở Lightbox -->
+                <div class="masonry" id="photo-grid" aria-live="polite"></div>
+
+                <div class="empty-state" id="album-notfound" hidden>
+                    <h3>Không tìm thấy album tương ứng.</h3>
+                    <p>Album này có thể đã được cập nhật hoặc điều chỉnh. <a href="portfolio.html">Quay trở lại Bộ Sưu Tập</a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Lightbox Modal (Phóng to ảnh, duyệt phím mũi tên & focus trap) ===== -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to" hidden>
+        <div class="lightbox-stage">
+            <div class="lightbox-frame">
+                <img id="lightbox-img" src="" alt="" width="1200" height="800">
+            </div>
+            <p class="lightbox-caption">
+                <span class="lightbox-counter" id="lightbox-counter"></span>
+                <span id="lightbox-caption-text"></span>
+            </p>
+            <button type="button" class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Ảnh trước">&#8592;</button>
+            <button type="button" class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Ảnh kế tiếp">&#8594;</button>
+            <button type="button" class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Đóng cửa sổ">&#10005;</button>
+        </div>
+    </div>
+
+    <!-- ===== Slideshow Toàn Màn Hình (Tự chuyển ảnh, hover tạm dừng) ===== -->
+    <div class="slideshow" id="slideshow" role="dialog" aria-modal="true" aria-label="Trình chiếu slideshow toàn màn hình" hidden>
+        <button type="button" class="slideshow-exit" id="slideshow-exit">Thoát (Esc)</button>
+        <div class="slideshow-frame">
+            <img id="slideshow-img" src="" alt="" width="1200" height="800">
+        </div>
+        <div class="slideshow-bar">
+            <span class="slideshow-status" id="slideshow-status">Đang phát</span>
+            <span id="slideshow-counter"></span>
+            <span>Di chuột lên ảnh để tạm dừng</span>
+        </div>
+    </div>
+
+    <!-- ===== Chân trang ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="brand-name">Tessa Morgan</span>
+                    <p>Nhiếp ảnh gia cưới cao cấp tại Việt Nam. Lưu giữ trọn vẹn những xúc cảm thiêng liêng và câu chuyện tình yêu vượt thời gian.</p>
+                </div>
+                <div>
+                    <h4>Khám Phá</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Bộ Sưu Tập</a></li>
+                        <li><a href="services.html">Dịch Vụ &amp; Bảng Giá</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Thông Tin Liên Hệ</h4>
+                    <ul>
+                        <li><a href="mailto:tessamorgan@ou.com">tessamorgan@ou.com</a></li>
+                        <li><a href="tel:012345678">012345678</a></li>
+                        <li>Studio: Khu dân cư Nhơn Đức, xã Hiệp Phước, TP. Hồ Chí Minh</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> Tessa Morgan Photography. Bản quyền đã được bảo hộ.</span>
+                <span>Tuyệt phẩm nhiếp ảnh cưới mỹ thuật Việt Nam</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gallery.js"></script>
+</body>
+</html>

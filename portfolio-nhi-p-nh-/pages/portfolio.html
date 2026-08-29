@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bộ sưu tập 18 album ảnh cưới, lễ đính hôn và chân dung nghệ thuật của Tessa Morgan — Wedding Photographer tại Việt Nam.">
+    <title>Bộ Sưu Tập — Tessa Morgan | Wedding Photographer</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2748%27 fill=%27%232f2a26%27/%3E%3Ctext x=%2750%27 y=%2768%27 font-size=%2752%27 text-anchor=%27middle%27 fill=%27%23c9a26b%27 font-family=%27Georgia,serif%27%3ETM%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+    <!-- ===== Header & Điều hướng chính ===== -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="../index.html">
+                <span class="brand-name">Tessa Morgan</span>
+                <span class="brand-tagline">WEDDING PHOTOGRAPHER</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" aria-label="Điều hướng chính">
+                <a href="../index.html">Trang Chủ</a>
+                <a href="portfolio.html">Bộ Sưu Tập</a>
+                <a href="services.html">Dịch Vụ &amp; Bảng Giá</a>
+                <a href="about.html">Giới Thiệu</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal is-visible">
+                    <p class="eyebrow">Bộ Sưu Tập Tác Phẩm</p>
+                    <h1>Khoảnh Khắc Tình Yêu Bất Tận</h1>
+                    <p>Mỗi khung hình là một tuyệt tác cảm xúc, kết tinh từ tình yêu chân thành và nét đẹp nên thơ của những miền đất di sản Việt Nam.</p>
+                </div>
+
+                <!-- Bộ lọc theo Category tiếng Việt (Tất Cả, Lễ Cưới, Lễ Đính Hôn, Ảnh Chân Dung) -->
+                <div class="filter-bar" id="category-filter" role="group" aria-label="Lọc album theo danh mục">
+                    <button type="button" class="filter-btn is-active" data-category="all" aria-pressed="true">Tất Cả</button>
+                    <button type="button" class="filter-btn" data-category="Lễ Cưới" aria-pressed="false">Lễ Cưới</button>
+                    <button type="button" class="filter-btn" data-category="Lễ Đính Hôn" aria-pressed="false">Lễ Đính Hôn</button>
+                    <button type="button" class="filter-btn" data-category="Ảnh Chân Dung" aria-pressed="false">Ảnh Chân Dung</button>
+                </div>
+
+                <!-- Lưới 18 Album — render động từ data/gallery.json -->
+                <div class="masonry" id="album-grid" aria-live="polite"></div>
+
+                <div class="empty-state" id="album-empty" hidden>
+                    <h3>Chưa có album nào trong danh mục này.</h3>
+                    <p>Vui lòng lựa chọn một danh mục khác để thưởng lãm.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Chân trang ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="brand-name">Tessa Morgan</span>
+                    <p>Nhiếp ảnh gia cưới cao cấp tại Việt Nam. Lưu giữ trọn vẹn những xúc cảm thiêng liêng và câu chuyện tình yêu vượt thời gian.</p>
+                </div>
+                <div>
+                    <h4>Khám Phá</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Bộ Sưu Tập</a></li>
+                        <li><a href="services.html">Dịch Vụ &amp; Bảng Giá</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Thông Tin Liên Hệ</h4>
+                    <ul>
+                        <li><a href="mailto:tessamorgan@ou.com">tessamorgan@ou.com</a></li>
+                        <li><a href="tel:012345678">012345678</a></li>
+                        <li>Studio: Khu dân cư Nhơn Đức, xã Hiệp Phước, TP. Hồ Chí Minh</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> Tessa Morgan Photography. Bản quyền đã được bảo hộ.</span>
+                <span>Tuyệt phẩm nhiếp ảnh cưới mỹ thuật Việt Nam</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gallery.js"></script>
+</body>
+</html>
